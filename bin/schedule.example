@@ -1,0 +1,10 @@
+# crontab -e, then paste and fix the path. Line them up on the same minute so
+# nothing runs between batches. Each line gets a reason.
+
+# Weekdays 7:00: every department works its open handoffs before the morning brief
+0 7 * * 1-5  cd /path/to/ai-chief-of-staff && bin/run-dept.sh marketing  >> briefs/cron.log 2>&1
+0 7 * * 1-5  cd /path/to/ai-chief-of-staff && bin/run-dept.sh sales      >> briefs/cron.log 2>&1
+0 7 * * 1-5  cd /path/to/ai-chief-of-staff && bin/run-dept.sh operations >> briefs/cron.log 2>&1
+
+# Weekdays 7:30: the brief, after the departments finish
+30 7 * * 1-5 cd /path/to/ai-chief-of-staff && claude -p "Use the chief-of-staff skill and run the daily brief." --allowedTools Read Write Edit Glob Grep Skill "Bash(python3 bin/sweep.py)" "Bash(git log:*)" --permission-mode acceptEdits >> briefs/cron.log 2>&1

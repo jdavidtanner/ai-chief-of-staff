@@ -1,0 +1,5 @@
+.DS_Store
+briefs/*.md
+briefs/cron.log
+departments/*/handoffs/*.md
+.claude/settings.local.json

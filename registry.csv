@@ -1,0 +1,9 @@
+name,department,triggers,inputs,outputs,status
+chief-of-staff,top,"any request; daily brief; weekly review; drift check","registry.csv; departments/*/STATUS.md; memory/","briefs/; handoffs into any department",active
+reviewer,top,"any handoff at Status: done","the handoff file; files its Result points to","Review section; Status: reviewed or rework",active
+marketing-writer,marketing,"email; post; ad copy; landing page copy","brain/voice.md; brain/offers.md; handoff Inputs","draft in the handoff Result",active
+marketing-analyst,marketing,"what's working; campaign numbers; content performance","exports or connector data named in the handoff","numbers and one recommendation in Result",active
+sales-researcher,sales,"find leads; win-back list; research a prospect","brain/clients.md; brain/offers.md; sources named in the handoff","list with a source per row in Result",active
+sales-followup,sales,"follow-up; reply draft; proposal draft","brain/offers.md; brain/voice.md; the thread or notes in the handoff","drafts in Result; owner sends",active
+ops-triage,operations,"sort my inbox; what's urgent; clean up this list","the files or exports named in the handoff","sorted list with one action each in Result",active
+ops-sop-writer,operations,"write a process; checklist; how we do X","the owner's notes in the handoff","SOP saved to brain/sops/ and linked in Result",active
